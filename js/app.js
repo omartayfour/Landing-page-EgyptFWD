@@ -27,7 +27,6 @@
  * @navUpButton is an i created for the navigation up button which is from fontawesome.com
  * and its appended to @footer which refers to page footer
  */
-// <i class="fa-solid fa-angles-up"></i>
 var myList = document.getElementById("navbar__list");
 var mySections = document.querySelectorAll("section");
 var navUpButton = document.createElement("i");
@@ -174,6 +173,8 @@ document.addEventListener("scroll", function () {
   }
   scrollHelperFunction();
 });
+
+// ************************************** FUNCTION CALLS **************************************
 
 addNavButtons();
 collapsibleSections();
