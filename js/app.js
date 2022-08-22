@@ -87,20 +87,23 @@ function scrollHelperFunction() {
   }
 }
 
-function collapseSection(event)
-{
-    const paragraphs = event.target.previousElementSibling.children[0].querySelectorAll("p");
-    if (paragraphs[0].style.display === "block") {
-      Array.from(paragraphs).forEach(function (p) {
-        p.style.display = "none";
-      });
-      event.target.classList.replace("fa-minimize", "fa-maximize");
-    } else {
-      Array.from(paragraphs).forEach(function (p) {
-        p.style.display = "block";
-      });
-      event.target.classList.replace("fa-maximize", "fa-minimize");
-    }
+/**
+ * @description helper function for helping in collapsing functions buttons. Added eventListener for the collapse buttons.
+ * @param {event} event - used to get the previous element sibilings which are the <p> tags that will be collapsed and expanded.
+ */
+function collapseSection(event) {
+  const paragraphs = event.target.previousElementSibling.children[0].querySelectorAll("p");
+  if (paragraphs[0].style.display === "block") {
+    Array.from(paragraphs).forEach(function (p) {
+      p.style.display = "none";
+    });
+    event.target.classList.replace("fa-minimize", "fa-maximize");
+  } else {
+    Array.from(paragraphs).forEach(function (p) {
+      p.style.display = "block";
+    });
+    event.target.classList.replace("fa-maximize", "fa-minimize");
+  }
 }
 
 // ************************************** MAIN FUNCTIONS **************************************
@@ -126,6 +129,9 @@ function navigateToSection(event) {
   mySection.classList.add("your-active-class");
 }
 
+/**
+ * @description function to create collapse section buttons and add eventListner which has on click collapseSection() function call
+ */
 function collapsibleSections() {
   for (var i = 0; i < mySections.length; i++) {
     const button = document.createElement("i");
@@ -156,14 +162,14 @@ navUpButton.addEventListener("click", function () {
 document.addEventListener("scroll", function () {
   if (window.scrollY < 470) {
     myList.style.display = "block";
-    
+
   } else {
     myList.style.display = "none";
   }
-  if(window.scrollY>1500){
+  if (window.scrollY > 1500) {
     navUpButton.style.display = "block";
   }
-  else{
+  else {
     navUpButton.style.display = "none";
   }
   scrollHelperFunction();
