@@ -77,7 +77,7 @@ function scrollHelperFunction() {
     if (rect.bottom == 0 && rect.top == 0) {
       continue;
     }
-    if (rect.bottom <= window.innerHeight && rect.top >= 0) {
+    if ((rect.bottom <= window.innerHeight && rect.top >= 0) || (rect.y <= 0 && rect.y >= -577)) {
       // usage of {window.innerHeight} to check on current viewport
       var mySection = document.querySelector("#section" + i);
       removeActiveClass();
