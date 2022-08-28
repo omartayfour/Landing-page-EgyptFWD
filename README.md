@@ -30,3 +30,4 @@ The description for each variable/function/event listener is provided above each
 ## References
 * [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Font Awesomme](https://fontawesome.com/)
+* [JavaScript Beautifier](https://beautifier.io/)
